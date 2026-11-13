@@ -1,0 +1,28 @@
+======================================================================
+CHANGELOG — Módulo Cliente (PySide6 & Sincronização via Tailscale)
+Projeto: Locadora de Filmes - Inhuma
+======================================================================
+
+1. Integração de Rede com Tailscale
+- Conectividade Segura: O aplicativo cliente em PySide6 foi configurado para 
+se comunicar diretamente com o servidor 
+Flask hospedado no Docker através da rede privada e segura do Tailscale.
+- Trabalho Colaborativo: Permitiu que diferentes computadores na mesma rede Tailscale 
+consumissem e gravassem dados na mesma API de forma integrada (permitindo que 
+cadastros feitos por colegas apareçam remotamente).
+
+2. Criação de Rotas e Endpoints da API
+- Mapeamento Completo: Foram estruturados blueprints dedicados no backend para gerenciar os 
+endpoints essenciais de filmes, locações e clientes.
+- Operações de CRUD e Comunicação: Cada rota foi configurada para processar requisições HTTP (GET, POST, PUT, DELETE), 
+permitindo que o cliente PySide6 realize cadastros, consultas, edições e exclusões 
+de forma direta e padronizada com o banco de dados.
+
+3. Interface Principal
+- O arquivo `main.py` é o ponto de entrada e o núcleo visual da aplicação cliente. 
+Ele gerencia as janelas e armazena os elementos gráficos e componentes estruturais do PySide6 
+(como `QWidget`, layouts, tabelas e botões), integrando a experiência do usuário com as requisições enviadas à API.
+
+4. Próximos Passos
+- A próxima etapa consiste em configurar o servidor criando os arquivos Dockerfile, docker_compose e modelagem das 
+tabelas que formam o banco de dados respeitando todas as regras de negócio .
